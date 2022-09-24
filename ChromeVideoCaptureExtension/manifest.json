@@ -1,0 +1,32 @@
+{
+    "name": "Chrome Video Capture",
+    "description": "Capture any <video> tag and save or transcode it using FFmpeg",
+    "version": "1.0",
+    "manifest_version": 3,
+
+    "permissions": ["tabs", "activeTab", "scripting", "storage"],
+
+    "action": {
+        "default_title": "Video capture",
+        "default_popup": "popup.html"
+    },
+
+    "content_scripts": [
+        {
+            "id": "ScriptInjection",
+            "matches": ["<all_urls>"] ,
+            "js": ["socket.io.min.js" , "content_script.js"],
+            "run_at": "document_idle" ,
+            "all_frames": true
+        }
+    ],
+
+
+    "web_accessible_resources": [
+        {
+          "resources": [ "socket.io.min.js*"],
+          "matches": [ "https://*/*" ]
+        }
+    ]
+   
+}

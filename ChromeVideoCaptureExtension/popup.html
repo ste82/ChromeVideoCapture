@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <style>
+    html {
+      min-height: 5em;
+      min-width: 40em;
+      background: #c9dcff;
+      font-size: large;
+    }
+    input{
+      width: 30em;
+    }
+    p{
+      text-align: center;
+    }
+    button{
+      border-width: thin;    
+    }
+    #startbutton{
+      background-color: lightgreen;
+      
+    }
+    #stopbutton{
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+<body>
+  <p><button id="startbutton">Start capture</button></p>
+  <p><button id="stopbutton">Stop capture</button></p>
+  <p>Output: <select id="output_type">
+    <option value="streamToHLS(h264 NVENC)">Streaming HLS (h264 NVENC encoder)</option>
+    <option value="saveToFileWebM">File webm (without transcoding)</option>
+  </select>
+  </p>
+  <p>Output path: <input type="text" id="output_path">
+  </p>
+
+<script src="popup.js"></script>
+</body>
+</html>
